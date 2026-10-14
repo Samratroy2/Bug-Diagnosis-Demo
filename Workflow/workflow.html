@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>BugAI - Defect Workflow</title>
+
+    <link
+        rel="stylesheet"
+        href="workflow.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+</head>
+
+<body>
+
+
+    <!-- =====================================================
+         SIDEBAR
+         ===================================================== -->
+
+    <aside
+        id="bugaiSidebar"
+        class="bugai-sidebar"
+    >
+
+
+        <!-- BRAND -->
+
+        <div class="sidebar-brand">
+
+            <div class="brand-logo">
+                B
+            </div>
+
+
+            <div>
+
+                <div class="brand-name">
+                    BugAI
+                </div>
+
+
+                <div class="brand-subtitle">
+                    Intelligent Bug Diagnosis
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="sidebar-navigation">
+
+
+            <!-- =================================================
+                 MAIN
+                 ================================================= -->
+
+            <div class="navigation-label">
+                MAIN
+            </div>
+
+
+            <a
+                class="sidebar-link"
+                href="../Dashboard/dashboard.html"
+                aria-current="page"
+            >
+
+                <span class="material-symbols-outlined">home</span>
+
+                <span class="nav-text">
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a
+                class="sidebar-link"
+                href="../Bug-Submission/bug-submission.html"
+            >
+
+                <span class="material-symbols-outlined">add</span>
+
+                <span class="nav-text">
+                    Bug Submission
+                </span>
+
+            </a>
+
+
+            <a
+                class="sidebar-link active"
+                href="../Workflow/workflow.html"
+            >
+
+                <span class="material-symbols-outlined">account_tree</span>
+
+                <span class="nav-text">
+                    Workflow
+                </span>
+
+            </a>
+
+
+            <a
+                class="sidebar-link"
+                href="../Architecture/architecture.html"
+            >
+
+                <span class="material-symbols-outlined">architecture</span>
+
+                <span class="nav-text">
+                    Architecture
+                </span>
+
+            </a>
+
+
+
+            <!-- =================================================
+                 INTELLIGENCE
+                 ================================================= -->
+
+            <div class="navigation-label">
+                INTELLIGENCE
+            </div>
+
+
+            <a
+                class="sidebar-link"
+                href="../Knowledge-Base/knowledge-base.html"
+            >
+
+                <span class="material-symbols-outlined">database</span>
+
+                <span class="nav-text">
+                    Knowledge Base
+                </span>
+
+            </a>
+
+            <a
+                class="sidebar-link"
+                href="../Knowledge-Base-Pipeline/knowledge-Base-Pipeline.html"
+            >
+
+                <span class="material-symbols-outlined">network_intelligence</span>
+
+                <span class="nav-text">
+                    Knowledge Base Pipeline
+                </span>
+
+            </a>
+
+            <a
+                class="sidebar-link"
+                href="../Semantic-Similarity/similarity.html"
+            >
+
+                <span class="material-symbols-outlined">search</span>
+
+                <span class="nav-text">
+                    Semantic Similarity
+                </span>
+
+            </a>
+
+
+
+            <!-- =================================================
+                 ANALYTICS
+                 ================================================= -->
+
+            <div class="navigation-label">
+                ANALYTICS
+            </div>
+
+
+            <a
+                class="sidebar-link"
+                href="../Analytics/analytics.html"
+            >
+
+                <span class="material-symbols-outlined">analytics</span>
+
+                <span class="nav-text">
+                    Defect Analytics
+                </span>
+
+            </a>
+
+
+            <a
+                class="sidebar-link"
+                href="../Validation/validation.html"
+            >
+
+                <span class="material-symbols-outlined">check_circle</span>
+
+                <span class="nav-text">
+                    Validation
+                </span>
+
+            </a>
+
+
+
+            <!-- =================================================
+                 KNOWLEDGE
+                 ================================================= -->
+
+            <div class="navigation-label">
+                KNOWLEDGE
+            </div>
+
+
+            <a
+                class="sidebar-link"
+                href="../Knowledge-Base-Growth/knowledge-base-growth.html"
+            >
+
+                <span class="material-symbols-outlined">add</span>
+
+                <span class="nav-text">
+                    KB Growth
+                </span>
+
+            </a>
+
+
+
+            <!-- =================================================
+                 SYSTEM
+                 ================================================= -->
+
+            <div class="navigation-label">
+                SYSTEM
+            </div>
+
+
+            <a
+                class="sidebar-link"
+                href="../Settings/settings.html"
+            >
+
+                <span class="material-symbols-outlined">settings</span>
+
+                <span class="nav-text">
+                    Settings
+                </span>
+
+            </a>
+
+
+        </nav>
+
+
+
+        <!-- =================================================
+             SIDEBAR FOOTER
+             ================================================= -->
+
+        <div class="sidebar-footer">
+
+
+            <div class="sidebar-status">
+
+                <span class="status-dot">
+                </span>
+
+                <span class="status-text">
+                    Firebase Connected
+                </span>
+
+            </div>
+
+
+            <div class="sidebar-version">
+                BugAI · Milestone 4
+            </div>
+
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MOBILE MENU BUTTON
+    ====================================================== -->
+
+    <button
+        id="sidebarMenuButton"
+        class="sidebar-menu-button"
+        type="button"
+        aria-label="Open navigation"
+        aria-controls="bugaiSidebar"
+        aria-expanded="false"
+    >
+        ☰
+    </button>
+
+
+    <!-- MOBILE OVERLAY -->
+    <div
+        id="sidebarOverlay"
+        class="sidebar-overlay"
+    ></div>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main>
+
+        <!-- HEADER -->
+        <header>
+
+            <span>
+                Milestone 2
+            </span>
+
+            <h1>
+                Defect Analysis Workflow
+            </h1>
+
+            <p>
+                Multi-agent defect diagnosis workflow with triage,
+                log analysis and downstream retrieval.
+            </p>
+
+        </header>
+
+
+        <!-- =================================================
+             WORKFLOW
+        ================================================== -->
+
+        <section id="workflow"></section>
+
+
+        <!-- =================================================
+             BUG REPORT STRUCTURE
+        ================================================== -->
+
+        <section class="information">
+
+            <h2>
+                Bug Report Structure
+            </h2>
+
+
+            <div class="grid">
+
+                <article>
+                    <strong>
+                        Bug ID
+                    </strong>
+
+                    <p>
+                        Unique identifier assigned to a defect.
+                    </p>
+                </article>
+
+
+                <article>
+                    <strong>
+                        Project
+                    </strong>
+
+                    <p>
+                        Software project where the defect occurred.
+                    </p>
+                </article>
+
+
+                <article>
+                    <strong>
+                        Severity
+                    </strong>
+
+                    <p>
+                        Impact level of the reported defect.
+                    </p>
+                </article>
+
+
+                <article>
+                    <strong>
+                        Description
+                    </strong>
+
+                    <p>
+                        Detailed explanation of the problem.
+                    </p>
+                </article>
+
+
+                <article>
+                    <strong>
+                        Stack Trace
+                    </strong>
+
+                    <p>
+                        Technical execution trace related to failure.
+                    </p>
+                </article>
+
+
+                <article>
+                    <strong>
+                        Error Logs
+                    </strong>
+
+                    <p>
+                        Runtime diagnostic information.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         WORKFLOW JS
+    ====================================================== -->
+
+    <script src="workflow.js"></script>
+
+
+    <!-- =====================================================
+         LOCAL SIDEBAR + THEME JS
+    ====================================================== -->
+
+    <script>
+
+        (function () {
+
+            "use strict";
+
+
+            /* =================================================
+               STORAGE KEYS
+            ================================================= */
+
+            const SETTINGS_KEY =
+                "bugai-settings";
+
+            const LEGACY_KEY =
+                "bugai-theme";
+
+
+            /* =================================================
+               GET STORED THEME
+            ================================================= */
+
+            function getTheme() {
+
+                try {
+
+                    const settings =
+                        JSON.parse(
+                            localStorage.getItem(
+                                SETTINGS_KEY
+                            ) || "{}"
+                        );
+
+                    if (
+                        settings &&
+                        settings.theme
+                    ) {
+
+                        return settings.theme;
+
+                    }
+
+                } catch (error) {
+
+                    console.warn(
+                        "BugAI: Unable to read saved theme.",
+                        error
+                    );
+
+                }
+
+
+                return (
+                    localStorage.getItem(
+                        LEGACY_KEY
+                    ) || "system"
+                );
+
+            }
+
+
+            /* =================================================
+               APPLY THEME
+            ================================================= */
+
+            function applyTheme() {
+
+                const theme =
+                    getTheme();
+
+
+                const dark =
+                    theme === "dark" ||
+                    (
+                        theme === "system" &&
+                        window.matchMedia &&
+                        window.matchMedia(
+                            "(prefers-color-scheme: dark)"
+                        ).matches
+                    );
+
+
+                document.documentElement.classList.toggle(
+                    "dark-mode",
+                    dark
+                );
+
+                document.documentElement.classList.toggle(
+                    "dark",
+                    dark
+                );
+
+
+                document.body.classList.toggle(
+                    "dark-mode",
+                    dark
+                );
+
+                document.body.classList.toggle(
+                    "dark",
+                    dark
+                );
+
+            }
+
+
+            /* =================================================
+               SIDEBAR MENU
+            ================================================== */
+
+            function initMenu() {
+
+                const sidebar =
+                    document.getElementById(
+                        "bugaiSidebar"
+                    );
+
+                const button =
+                    document.getElementById(
+                        "sidebarMenuButton"
+                    );
+
+                const overlay =
+                    document.getElementById(
+                        "sidebarOverlay"
+                    );
+
+
+                if (
+                    !sidebar ||
+                    !button ||
+                    !overlay
+                ) {
+
+                    return;
+
+                }
+
+
+                function closeSidebar() {
+
+                    sidebar.classList.remove(
+                        "open"
+                    );
+
+                    overlay.classList.remove(
+                        "show"
+                    );
+
+                    button.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                }
+
+
+                button.addEventListener(
+                    "click",
+                    function () {
+
+                        const isOpen =
+                            sidebar.classList.toggle(
+                                "open"
+                            );
+
+
+                        overlay.classList.toggle(
+                            "show",
+                            isOpen
+                        );
+
+
+                        button.setAttribute(
+                            "aria-expanded",
+                            String(isOpen)
+                        );
+
+                    }
+                );
+
+
+                overlay.addEventListener(
+                    "click",
+                    closeSidebar
+                );
+
+
+                document.addEventListener(
+                    "keydown",
+                    function (event) {
+
+                        if (
+                            event.key === "Escape"
+                        ) {
+
+                            closeSidebar();
+
+                        }
+
+                    }
+                );
+
+
+                window.addEventListener(
+                    "resize",
+                    function () {
+
+                        if (
+                            window.innerWidth > 900
+                        ) {
+
+                            closeSidebar();
+
+                        }
+
+                    }
+                );
+
+            }
+
+
+            /* =================================================
+               INITIALIZE
+            ================================================== */
+
+            document.addEventListener(
+                "DOMContentLoaded",
+                function () {
+
+                    applyTheme();
+
+                    initMenu();
+
+                }
+            );
+
+
+            /* =================================================
+               SYNC THEME BETWEEN PAGES
+            ================================================== */
+
+            window.addEventListener(
+                "storage",
+                function (event) {
+
+                    if (
+                        event.key === SETTINGS_KEY ||
+                        event.key === LEGACY_KEY
+                    ) {
+
+                        applyTheme();
+
+                    }
+
+                }
+            );
+
+
+            /* =================================================
+               SYSTEM THEME CHANGE
+            ================================================== */
+
+            if (
+                window.matchMedia
+            ) {
+
+                const mediaQuery =
+                    window.matchMedia(
+                        "(prefers-color-scheme: dark)"
+                    );
+
+
+                if (
+                    mediaQuery.addEventListener
+                ) {
+
+                    mediaQuery.addEventListener(
+                        "change",
+                        applyTheme
+                    );
+
+                }
+
+            }
+
+        })();
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        BugAI - Semantic Similarity
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="similarity.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         SIDEBAR
+         ===================================================== -->
+
+    <aside
+        id="bugaiSidebar"
+        class="bugai-sidebar"
+    >
+
+
+        <!-- BRAND -->
+
+        <div class="sidebar-brand">
+
+            <div class="brand-logo">
+                B
+            </div>
+
+
+            <div>
+
+                <div class="brand-name">
+                    BugAI
+                </div>
+
+
+                <div class="brand-subtitle">
+                    Intelligent Bug Diagnosis
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="sidebar-navigation">
+
+
+            <!-- =================================================
+                 MAIN
+                 ================================================= -->
+
+            <div class="navigation-label">
+                MAIN
+            </div>
+
+
+            <a
+                class="sidebar-link"
+                href="../Dashboard/dashboard.html"
+                aria-current="page"
+            >
+
+                <span class="material-symbols-outlined">home</span>
+
+                <span class="nav-text">
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a
+                class="sidebar-link"
+                href="../Bug-Submission/bug-submission.html"
+            >
+
+                <span class="material-symbols-outlined">add</span>
+
+                <span class="nav-text">
+                    Bug Submission
+                </span>
+
+            </a>
+
+
+            <a
+                class="sidebar-link"
+                href="../Workflow/workflow.html"
+            >
+
+                <span class="material-symbols-outlined">account_tree</span>
+
+                <span class="nav-text">
+                    Workflow
+                </span>
+
+            </a>
+
+
+            <a
+                class="sidebar-link"
+                href="../Architecture/architecture.html"
+            >
+
+                <span class="material-symbols-outlined">architecture</span>
+
+                <span class="nav-text">
+                    Architecture
+                </span>
+
+            </a>
+
+
+
+            <!-- =================================================
+                 INTELLIGENCE
+                 ================================================= -->
+
+            <div class="navigation-label">
+                INTELLIGENCE
+            </div>
+
+
+            <a
+                class="sidebar-link"
+                href="../Knowledge-Base/knowledge-base.html"
+            >
+
+                <span class="material-symbols-outlined">database</span>
+
+                <span class="nav-text">
+                    Knowledge Base
+                </span>
+
+            </a>
+
+            <a
+                class="sidebar-link"
+                href="../Knowledge-Base-Pipeline/knowledge-Base-Pipeline.html"
+            >
+
+                <span class="material-symbols-outlined">network_intelligence</span>
+
+                <span class="nav-text">
+                    Knowledge Base Pipeline
+                </span>
+
+            </a>
+
+            <a
+                class="sidebar-link active"
+                href="../Semantic-Similarity/similarity.html"
+            >
+
+                <span class="material-symbols-outlined">search</span>
+
+                <span class="nav-text">
+                    Semantic Similarity
+                </span>
+
+            </a>
+
+
+
+            <!-- =================================================
+                 ANALYTICS
+                 ================================================= -->
+
+            <div class="navigation-label">
+                ANALYTICS
+            </div>
+
+
+            <a
+                class="sidebar-link"
+                href="../Analytics/analytics.html"
+            >
+
+                <span class="material-symbols-outlined">analytics</span>
+
+                <span class="nav-text">
+                    Defect Analytics
+                </span>
+
+            </a>
+
+
+            <a
+                class="sidebar-link"
+                href="../Validation/validation.html"
+            >
+
+                <span class="material-symbols-outlined">check_circle</span>
+
+                <span class="nav-text">
+                    Validation
+                </span>
+
+            </a>
+
+
+
+            <!-- =================================================
+                 KNOWLEDGE
+                 ================================================= -->
+
+            <div class="navigation-label">
+                KNOWLEDGE
+            </div>
+
+
+            <a
+                class="sidebar-link"
+                href="../Knowledge-Base-Growth/knowledge-base-growth.html"
+            >
+
+                <span class="material-symbols-outlined">add</span>
+
+                <span class="nav-text">
+                    KB Growth
+                </span>
+
+            </a>
+
+
+
+            <!-- =================================================
+                 SYSTEM
+                 ================================================= -->
+
+            <div class="navigation-label">
+                SYSTEM
+            </div>
+
+
+            <a
+                class="sidebar-link"
+                href="../Settings/settings.html"
+            >
+
+                <span class="material-symbols-outlined">settings</span>
+
+                <span class="nav-text">
+                    Settings
+                </span>
+
+            </a>
+
+
+        </nav>
+
+
+
+        <!-- =================================================
+             SIDEBAR FOOTER
+             ================================================= -->
+
+        <div class="sidebar-footer">
+
+
+            <div class="sidebar-status">
+
+                <span class="status-dot">
+                </span>
+
+                <span class="status-text">
+                    Firebase Connected
+                </span>
+
+            </div>
+
+
+            <div class="sidebar-version">
+                BugAI · Milestone 4
+            </div>
+
+
+        </div>
+
+
+    </aside>
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main>
+
+        <!-- =================================================
+             HEADER
+        ================================================== -->
+
+        <header>
+
+            <span>
+                RAG RETRIEVAL
+            </span>
+
+            <h1>
+                Semantic Similarity Search
+            </h1>
+
+            <p>
+                Compare a new bug description with historical
+                defect records using semantic embeddings and
+                FAISS vector search.
+            </p>
+
+        </header>
+
+
+        <!-- =================================================
+             SEARCH CARD
+        ================================================== -->
+
+        <section class="card search-card">
+
+            <div class="form-heading">
+
+                <h2>
+                    Search Historical Defects
+                </h2>
+
+                <p>
+                    Enter the error message, failure behaviour,
+                    or bug description.
+                </p>
+
+            </div>
+
+
+            <label for="query">
+                Bug Description / Error
+            </label>
+
+
+            <textarea
+                id="query"
+                rows="7"
+                placeholder="Example: Database connection refused when loading the dashboard. java.sql.SQLException Connection refused..."
+            ></textarea>
+
+
+            <div class="controls">
+
+                <div class="control-group">
+
+                    <label for="project">
+                        Project
+                    </label>
+
+                    <select id="project">
+
+                        <option value="">
+                            All Projects
+                        </option>
+
+                        <option value="Mozilla">
+                            Mozilla
+                        </option>
+
+                        <option value="Apache">
+                            Apache
+                        </option>
+
+                        <option value="Eclipse">
+                            Eclipse
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="control-group">
+
+                    <label for="topK">
+                        Results
+                    </label>
+
+                    <select id="topK">
+
+                        <option value="3">
+                            3
+                        </option>
+
+                        <option value="5">
+                            5
+                        </option>
+
+                        <option value="10" selected>
+                            10
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="button-group">
+
+                    <label>
+                        &nbsp;
+                    </label>
+
+                    <button
+                        id="searchButton"
+                        class="primary"
+                        type="button"
+                    >
+                        Find Similar Defects
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="keyboard-hint">
+
+                <span>
+                    Tip:
+                </span>
+
+                Press
+                <kbd>Ctrl</kbd>
+                +
+                <kbd>Enter</kbd>
+                to search.
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PIPELINE
+        ================================================== -->
+
+        <section class="pipeline">
+
+            <div class="pipeline-step active">
+                <span class="step-number">1</span>
+                <span>Query</span>
+            </div>
+
+            <b>→</b>
+
+            <div class="pipeline-step active">
+                <span class="step-number">2</span>
+                <span>Embedding Model</span>
+            </div>
+
+            <b>→</b>
+
+            <div class="pipeline-step active">
+                <span class="step-number">3</span>
+                <span>FAISS Search</span>
+            </div>
+
+            <b>→</b>
+
+            <div class="pipeline-step active">
+                <span class="step-number">4</span>
+                <span>Similarity</span>
+            </div>
+
+            <b>→</b>
+
+            <div class="pipeline-step active">
+                <span class="step-number">5</span>
+                <span>Rank Results</span>
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             RESULTS
+        ================================================== -->
+
+        <section id="results"></section>
+
+
+        <!-- =================================================
+             EXPLANATION
+        ================================================== -->
+
+        <section class="explanation">
+
+            <div>
+
+                <span class="section-label">
+                    RETRIEVAL PIPELINE
+                </span>
+
+                <h2>
+                    How retrieval works
+                </h2>
+
+                <p>
+                    The backend creates semantic embeddings
+                    for prepared defect chunks and stores them
+                    in a FAISS vector index.
+                </p>
+
+                <p>
+                    A submitted bug is embedded with the same
+                    model, searched against the index and ranked
+                    by similarity.
+                </p>
+
+            </div>
+
+
+            <div class="threshold-info">
+
+                <h3>
+                    Similarity thresholds
+                </h3>
+
+                <div class="threshold-row">
+
+                    <span class="threshold-badge duplicate">
+                        ≥ 82%
+                    </span>
+
+                    <span>
+                        Duplicate candidate
+                    </span>
+
+                </div>
+
+
+                <div class="threshold-row">
+
+                    <span class="threshold-badge related">
+                        65–81.9%
+                    </span>
+
+                    <span>
+                        Related defect
+                    </span>
+
+                </div>
+
+
+                <div class="threshold-row">
+
+                    <span class="threshold-badge unmatched">
+                        &lt; 65%
+                    </span>
+
+                    <span>
+                        Weak / unmatched
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         SCRIPTS
+    ====================================================== -->
+
+    <script src="similarity.js"></script>
+
+
+<script>
+(function(){
+  const SETTINGS_KEY='bugai-settings', LEGACY_KEY='bugai-theme';
+  function getTheme(){
+    try{const s=JSON.parse(localStorage.getItem(SETTINGS_KEY)||'{}'); if(s.theme) return s.theme;}catch(e){}
+    return localStorage.getItem(LEGACY_KEY)||'system';
+  }
+  function applyTheme(){
+    const t=getTheme(), dark=t==='dark'||(t==='system'&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches);
+    document.documentElement.classList.toggle('dark-mode',dark);
+    document.documentElement.classList.toggle('dark',dark);
+    document.body.classList.toggle('dark-mode',dark);
+    document.body.classList.toggle('dark',dark);
+  }
+  function initMenu(){
+    const s=document.getElementById('bugaiSidebar'), b=document.getElementById('sidebarMenuButton'), o=document.getElementById('sidebarOverlay');
+    if(!s||!b||!o)return;
+    const close=()=>{s.classList.remove('open');o.classList.remove('show');b.setAttribute('aria-expanded','false');};
+    b.addEventListener('click',()=>{const open=s.classList.toggle('open');o.classList.toggle('show',open);b.setAttribute('aria-expanded',String(open));});
+    o.addEventListener('click',close); document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
+    window.addEventListener('resize',()=>{if(window.innerWidth>900)close();});
+  }
+  document.addEventListener('DOMContentLoaded',()=>{applyTheme();initMenu();});
+  window.addEventListener('storage',e=>{if(e.key===SETTINGS_KEY||e.key===LEGACY_KEY)applyTheme();});
+  if(window.matchMedia)window.matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change',applyTheme);
+})();
+</script>
+</body>
+
+</html>

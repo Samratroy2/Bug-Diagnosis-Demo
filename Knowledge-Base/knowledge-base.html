@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>BugAI - Knowledge Base</title>
+
+    <!-- Sidebar -->
+    <!-- Knowledge Base -->
+    <link rel="stylesheet" href="knowledge-base.css">
+
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+</head>
+
+<body>
+
+
+    <!-- =====================================================
+         SIDEBAR
+         ===================================================== -->
+
+    <aside
+        id="bugaiSidebar"
+        class="bugai-sidebar"
+    >
+
+
+        <!-- BRAND -->
+
+        <div class="sidebar-brand">
+
+            <div class="brand-logo">
+                B
+            </div>
+
+
+            <div>
+
+                <div class="brand-name">
+                    BugAI
+                </div>
+
+
+                <div class="brand-subtitle">
+                    Intelligent Bug Diagnosis
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="sidebar-navigation">
+
+
+            <!-- =================================================
+                 MAIN
+                 ================================================= -->
+
+            <div class="navigation-label">
+                MAIN
+            </div>
+
+
+            <a
+                class="sidebar-link"
+                href="../Dashboard/dashboard.html"
+                aria-current="page"
+            >
+
+                <span class="material-symbols-outlined">home</span>
+
+                <span class="nav-text">
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a
+                class="sidebar-link"
+                href="../Bug-Submission/bug-submission.html"
+            >
+
+                <span class="material-symbols-outlined">add</span>
+
+                <span class="nav-text">
+                    Bug Submission
+                </span>
+
+            </a>
+
+
+            <a
+                class="sidebar-link"
+                href="../Workflow/workflow.html"
+            >
+
+                <span class="material-symbols-outlined">account_tree</span>
+
+                <span class="nav-text">
+                    Workflow
+                </span>
+
+            </a>
+
+
+            <a
+                class="sidebar-link"
+                href="../Architecture/architecture.html"
+            >
+
+                <span class="material-symbols-outlined">architecture</span>
+
+                <span class="nav-text">
+                    Architecture
+                </span>
+
+            </a>
+
+
+
+            <!-- =================================================
+                 INTELLIGENCE
+                 ================================================= -->
+
+            <div class="navigation-label">
+                INTELLIGENCE
+            </div>
+
+
+            <a
+                class="sidebar-link active"
+                href="../Knowledge-Base/knowledge-base.html"
+            >
+
+                <span class="material-symbols-outlined">database</span>
+
+                <span class="nav-text">
+                    Knowledge Base
+                </span>
+
+            </a>
+
+            <a
+                class="sidebar-link"
+                href="../Knowledge-Base-Pipeline/knowledge-Base-Pipeline.html"
+            >
+
+                <span class="material-symbols-outlined">network_intelligence</span>
+
+                <span class="nav-text">
+                    Knowledge Base Pipeline
+                </span>
+
+            </a>
+
+            <a
+                class="sidebar-link"
+                href="../Semantic-Similarity/similarity.html"
+            >
+
+                <span class="material-symbols-outlined">search</span>
+
+                <span class="nav-text">
+                    Semantic Similarity
+                </span>
+
+            </a>
+
+
+
+            <!-- =================================================
+                 ANALYTICS
+                 ================================================= -->
+
+            <div class="navigation-label">
+                ANALYTICS
+            </div>
+
+
+            <a
+                class="sidebar-link"
+                href="../Analytics/analytics.html"
+            >
+
+                <span class="material-symbols-outlined">analytics</span>
+
+                <span class="nav-text">
+                    Defect Analytics
+                </span>
+
+            </a>
+
+
+            <a
+                class="sidebar-link"
+                href="../Validation/validation.html"
+            >
+
+                <span class="material-symbols-outlined">check_circle</span>
+
+                <span class="nav-text">
+                    Validation
+                </span>
+
+            </a>
+
+
+
+            <!-- =================================================
+                 KNOWLEDGE
+                 ================================================= -->
+
+            <div class="navigation-label">
+                KNOWLEDGE
+            </div>
+
+
+            <a
+                class="sidebar-link"
+                href="../Knowledge-Base-Growth/knowledge-base-growth.html"
+            >
+
+                <span class="material-symbols-outlined">add</span>
+
+                <span class="nav-text">
+                    KB Growth
+                </span>
+
+            </a>
+
+
+
+            <!-- =================================================
+                 SYSTEM
+                 ================================================= -->
+
+            <div class="navigation-label">
+                SYSTEM
+            </div>
+
+
+            <a
+                class="sidebar-link"
+                href="../Settings/settings.html"
+            >
+
+                <span class="material-symbols-outlined">settings</span>
+
+                <span class="nav-text">
+                    Settings
+                </span>
+
+            </a>
+
+
+        </nav>
+
+
+
+        <!-- =================================================
+             SIDEBAR FOOTER
+             ================================================= -->
+
+        <div class="sidebar-footer">
+
+
+            <div class="sidebar-status">
+
+                <span class="status-dot">
+                </span>
+
+                <span class="status-text">
+                    Firebase Connected
+                </span>
+
+            </div>
+
+
+            <div class="sidebar-version">
+                BugAI · Milestone 4
+            </div>
+
+
+        </div>
+
+
+    </aside>
+
+
+<!-- =========================================================
+     MAIN CONTENT
+========================================================= -->
+
+<main>
+
+    <!-- =====================================================
+         PAGE HEADER
+    ====================================================== -->
+
+    <header class="page-header">
+
+        <span class="eyebrow">
+            RAG KNOWLEDGE BASE
+        </span>
+
+        <h1>
+            Historical Defect Knowledge Base
+        </h1>
+
+        <p>
+            Historical bug reports used by BugAI for semantic search,
+            duplicate detection, root-cause analysis and remediation.
+        </p>
+
+    </header>
+
+
+    <!-- =====================================================
+         RAG PIPELINE
+    ====================================================== -->
+
+    <section
+        class="pipeline"
+        aria-label="Knowledge base processing pipeline"
+    >
+
+        <div class="pipeline-step active">
+            <span class="pipeline-number">1</span>
+            <span>Bug Dataset</span>
+        </div>
+
+        <b aria-hidden="true">→</b>
+
+        <div class="pipeline-step active">
+            <span class="pipeline-number">2</span>
+            <span>Clean Data</span>
+        </div>
+
+        <b aria-hidden="true">→</b>
+
+        <div class="pipeline-step active">
+            <span class="pipeline-number">3</span>
+            <span>Chunking</span>
+        </div>
+
+        <b aria-hidden="true">→</b>
+
+        <div class="pipeline-step active">
+            <span class="pipeline-number">4</span>
+            <span>Embedding</span>
+        </div>
+
+        <b aria-hidden="true">→</b>
+
+        <div
+            class="pipeline-step"
+            id="faissPipelineStep"
+        >
+            <span class="pipeline-number">5</span>
+            <span>FAISS Index</span>
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         DATASET STATISTICS
+    ====================================================== -->
+
+    <section
+        class="stats"
+        aria-label="Knowledge base statistics"
+    >
+
+        <article class="stat-card">
+
+            <span>Mozilla</span>
+
+            <strong id="mozillaCount">
+                —
+            </strong>
+
+        </article>
+
+
+        <article class="stat-card">
+
+            <span>Apache</span>
+
+            <strong id="apacheCount">
+                —
+            </strong>
+
+        </article>
+
+
+        <article class="stat-card">
+
+            <span>Eclipse</span>
+
+            <strong id="eclipseCount">
+                —
+            </strong>
+
+        </article>
+
+
+        <article class="stat-card">
+
+            <span>Total Records</span>
+
+            <strong id="totalCount">
+                —
+            </strong>
+
+        </article>
+
+
+        <article class="stat-card">
+
+            <span>Indexed Vectors</span>
+
+            <strong id="indexedCount">
+                —
+            </strong>
+
+        </article>
+
+
+        <article class="stat-card status-card">
+
+            <span>Index Status</span>
+
+            <strong
+                id="indexStatus"
+                class="status checking"
+            >
+                Checking...
+            </strong>
+
+        </article>
+
+    </section>
+
+
+    <!-- =====================================================
+         INDEX INFORMATION
+    ====================================================== -->
+
+    <section
+        class="index-info"
+        aria-label="Vector index information"
+    >
+
+        <div class="info-item">
+
+            <span>
+                Embedding Model
+            </span>
+
+            <strong id="embeddingModel">
+                —
+            </strong>
+
+        </div>
+
+
+        <div class="info-item">
+
+            <span>
+                Vector Dimension
+            </span>
+
+            <strong id="vectorDimension">
+                —
+            </strong>
+
+        </div>
+
+
+        <div class="info-item">
+
+            <span>
+                FAISS Vectors
+            </span>
+
+            <strong id="faissVectors">
+                —
+            </strong>
+
+        </div>
+
+
+        <div class="info-item">
+
+            <span>
+                Dataset Records
+            </span>
+
+            <strong id="datasetRecords">
+                —
+            </strong>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SEARCH / FILTER CONTROLS
+    ====================================================== -->
+
+    <section
+        class="controls"
+        aria-label="Knowledge base controls"
+    >
+
+        <div class="search-wrapper">
+
+            <input
+                id="search"
+                type="search"
+                autocomplete="off"
+                spellcheck="false"
+                placeholder="Search historical defects..."
+                aria-label="Search historical defects"
+            >
+
+            <span
+                id="searchInfo"
+                class="search-info"
+            >
+                Search records
+            </span>
+
+        </div>
+
+
+        <select
+            id="projectFilter"
+            aria-label="Filter by project"
+        >
+
+            <option value="">
+                All Projects
+            </option>
+
+            <option value="Mozilla">
+                Mozilla
+            </option>
+
+            <option value="Apache">
+                Apache
+            </option>
+
+            <option value="Eclipse">
+                Eclipse
+            </option>
+
+        </select>
+
+
+        <button
+            id="refreshStats"
+            type="button"
+        >
+            Refresh Status
+        </button>
+
+    </section>
+
+
+    <!-- =====================================================
+         RECORD TOOLBAR
+    ====================================================== -->
+
+    <section
+        class="records-toolbar"
+        aria-label="Knowledge base pagination"
+    >
+
+        <span id="recordsSummary">
+            Loading records...
+        </span>
+
+
+        <div class="pagination">
+
+            <button
+                id="previousPage"
+                type="button"
+                disabled
+                aria-label="Previous page"
+            >
+                ← Previous
+            </button>
+
+
+            <span
+                id="pageNumber"
+                aria-live="polite"
+            >
+                Page 1
+            </span>
+
+
+            <button
+                id="nextPage"
+                type="button"
+                disabled
+                aria-label="Next page"
+            >
+                Next →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         KNOWLEDGE BASE RECORDS
+    ====================================================== -->
+
+    <section
+        id="records"
+        aria-live="polite"
+        aria-busy="true"
+    >
+
+        <div class="card loading-card">
+
+            <div
+                class="loading-spinner"
+                aria-hidden="true"
+            ></div>
+
+            <h3>
+                Loading knowledge base...
+            </h3>
+
+            <p>
+                Fetching historical defect records.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         MILESTONE NOTE
+    ====================================================== -->
+
+    <section class="note">
+
+        <strong>
+            Milestone 3 RAG Implementation
+        </strong>
+
+        <p>
+            BugAI uses historical Mozilla, Apache and Eclipse
+            defect records as the retrieval knowledge base.
+            Records are converted into normalized text,
+            embedded using
+            <strong>all-MiniLM-L6-v2</strong>,
+            and indexed using FAISS for semantic similarity search.
+        </p>
+
+        <p>
+            The current production knowledge base contains
+            <strong>1,311,079</strong>
+            historical defect records.
+            The FAISS index is generated separately by the backend
+            indexing process and reused by the application.
+        </p>
+
+    </section>
+
+</main>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script src="knowledge-base.js"></script>
+
+
+<script>
+(function(){
+  const SETTINGS_KEY='bugai-settings', LEGACY_KEY='bugai-theme';
+  function getTheme(){
+    try{const s=JSON.parse(localStorage.getItem(SETTINGS_KEY)||'{}'); if(s.theme) return s.theme;}catch(e){}
+    return localStorage.getItem(LEGACY_KEY)||'system';
+  }
+  function applyTheme(){
+    const t=getTheme(), dark=t==='dark'||(t==='system'&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches);
+    document.documentElement.classList.toggle('dark-mode',dark);
+    document.documentElement.classList.toggle('dark',dark);
+    document.body.classList.toggle('dark-mode',dark);
+    document.body.classList.toggle('dark',dark);
+  }
+  function initMenu(){
+    const s=document.getElementById('bugaiSidebar'), b=document.getElementById('sidebarMenuButton'), o=document.getElementById('sidebarOverlay');
+    if(!s||!b||!o)return;
+    const close=()=>{s.classList.remove('open');o.classList.remove('show');b.setAttribute('aria-expanded','false');};
+    b.addEventListener('click',()=>{const open=s.classList.toggle('open');o.classList.toggle('show',open);b.setAttribute('aria-expanded',String(open));});
+    o.addEventListener('click',close); document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
+    window.addEventListener('resize',()=>{if(window.innerWidth>900)close();});
+  }
+  document.addEventListener('DOMContentLoaded',()=>{applyTheme();initMenu();});
+  window.addEventListener('storage',e=>{if(e.key===SETTINGS_KEY||e.key===LEGACY_KEY)applyTheme();});
+  if(window.matchMedia)window.matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change',applyTheme);
+})();
+</script>
+</body>
+</html>
