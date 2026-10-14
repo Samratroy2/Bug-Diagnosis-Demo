@@ -43,12 +43,24 @@ except OverflowError:
 # FAISS / SENTENCE TRANSFORMERS
 # ============================================================
 
-try:
-    import faiss
-    from sentence_transformers import SentenceTransformer
-except ImportError:
+# Lightweight deployment mode for the public demo.
+DEMO_MODE = os.getenv("BUGAI_DEMO_MODE", "0").lower() in (
+    "1", "true", "yes"
+)
+
+if DEMO_MODE:
     faiss = None
     SentenceTransformer = None
+else:
+    try:
+        import faiss
+    except ImportError:
+        faiss = None
+
+    try:
+        from sentence_transformers import SentenceTransformer
+    except ImportError:
+        SentenceTransformer = None
 
 
 # ============================================================
@@ -1303,6 +1315,46 @@ def search_index(
     This improves relevance without rebuilding the production FAISS index
     and without scanning the 1.31M-row CSV.
     """
+
+    # Small public demo: rank the CSV records lexically without
+    # loading an embedding model or a FAISS index.
+    if DEMO_MODE:
+        requested_project = clean_text(project)
+        target_project = (
+            canonical_project(requested_project)
+            if requested_project else ""
+        )
+
+        ranked = []
+        seen = set()
+
+        for item in load_records():
+            if target_project:
+                item_project = canonical_project(
+                    item.get("project", ""),
+                    item.get("source_file", ""),
+                    item.get("bug_id", ""),
+                    item.get("title", "")
+                )
+                if item_project != target_project:
+                    continue
+
+            bug_id = clean_text(item.get("bug_id", ""))
+            if bug_id and bug_id in seen:
+                continue
+            if bug_id:
+                seen.add(bug_id)
+
+            score = _lexical_rerank_score(query, item)
+            if score > 0:
+                ranked.append((score, item))
+
+        ranked.sort(key=lambda row: row[0], reverse=True)
+
+        return [
+            _format_search_result(item, score, score)
+            for score, item in ranked[:max(1, int(top_k))]
+        ]
 
     index, metadata = _refresh_search_cache()
 
@@ -3393,16 +3445,16 @@ def health():
             ),
 
         "index_exists":
-            INDEX_FILE.exists(),
+            False if DEMO_MODE else INDEX_FILE.exists(),
 
         "index_vectors":
             get_index_vector_count(),
 
         "index_file":
-            str(INDEX_FILE),
+            None if DEMO_MODE else str(INDEX_FILE),
 
         "metadata_file":
-            str(META_FILE)
+            None if DEMO_MODE else str(META_FILE)
     })
 
 
@@ -3431,9 +3483,13 @@ def stats():
             project = str(record.get("project") or "Unknown").strip()
             by_project[project] = by_project.get(project, 0) + 1
 
-        index_exists = INDEX_FILE.exists()
-        metadata_exists = META_FILE.exists()
-        index_vectors = get_index_vector_count() if index_exists else 0
+        index_exists = False if DEMO_MODE else INDEX_FILE.exists()
+        metadata_exists = False if DEMO_MODE else META_FILE.exists()
+        index_vectors = (
+            0 if DEMO_MODE
+            else get_index_vector_count() if index_exists
+            else 0
+        )
 
         metadata_count = 0
         if metadata_exists:
@@ -3468,12 +3524,13 @@ def stats():
             "embedding_model": MODEL_NAME,
             "embedding_dimension": 384,
             "index_status": (
-                "Ready" if ready
+                "Demo Lexical Search" if DEMO_MODE
+                else "Ready" if ready
                 else "Partial" if index_exists
                 else "Not Built"
             ),
-            "index_file": str(INDEX_FILE),
-            "metadata_file": str(META_FILE)
+            "index_file": None if DEMO_MODE else str(INDEX_FILE),
+            "metadata_file": None if DEMO_MODE else str(META_FILE)
         })
 
     except Exception as e:
