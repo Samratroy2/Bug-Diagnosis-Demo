@@ -10,3 +10,8 @@ venv/
 *.before-render-url.bak
 .DS_Store
 Thumbs.db
+backend/app.py.backup
+data/analytics.building.db
+data/submitted_bugs.jsonl
+
+data/analytics.db
